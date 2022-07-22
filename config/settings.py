@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
+    'tinymce',
     'cloudinary',
     'cloudinary_storage',
     'usersapp',
