@@ -1,5 +1,5 @@
-{% for post in posts %}
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+  {% for post in posts %}
   <div class="rounded-xl bg-white p-4 pb-5 shadow-sm">
     <a href="{% url 'post_detail' post.slug %}" class="block rounded-md overflow-hidden">
       <img
@@ -30,5 +30,5 @@
     </div>
   </div>
   
+  {% endfor %}
 </div>
-{% endfor %}

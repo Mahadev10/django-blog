@@ -10,7 +10,7 @@ def defaultData():
     tags = models.Tag.objects.all()
     return (popular_posts,categories,tags)
 def home(request):
-    posts = models.Post.objects.all()
+    posts = models.Post.objects.filter(status="published")
     popular_posts,categories,tags = defaultData()
     return render(request, "index.html", context={"posts": posts, "popular_posts":popular_posts,"categories": categories, "tags": tags,"alert":True})
 
