@@ -5,7 +5,7 @@ from django.db.models import Count
 def defaultData():
     query_set = models.Like.objects.values('post').annotate(Count('post'))[0:3]
     id_list = map(lambda post:post['post'],query_set)
-    popular_posts = models.Post.objects.filter(id__in=id_list)
+    popular_posts = models.Post.objects.filter(id__in=id_list,status="published")
     categories = models.Category.objects.all()
     tags = models.Tag.objects.all()
     return (popular_posts,categories,tags)
